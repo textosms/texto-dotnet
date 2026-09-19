@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PackageId>Texto.Sdk</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Texto (Floop Pty Ltd)</Authors>
+    <Company>Floop Pty Ltd</Company>
+    <Product>Texto SMS SDK</Product>
+    <Description>Official .NET SDK for the Texto SMS API: sending, delivery receipts, inbound replies, credits, sub-accounts, numbers, webhooks and reporting.</Description>
+    <PackageTags>sms;texto;messaging;australia;api</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://texto.com.au/developers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/textosms/texto-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright (c) 2026 Floop Pty Ltd trading as Texto</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: nuget
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet test tests/Texto.Tests/Texto.Tests.csproj
+      - run: dotnet pack src/Texto/Texto.csproj -c Release -o artifacts
+      - name: Exchange GitHub identity for a short-lived NuGet key
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ vars.NUGET_USER }}
+      - run: >-
+          dotnet nuget push "artifacts/*.nupkg"
+          --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate
