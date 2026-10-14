@@ -99,5 +99,6 @@ Idempotent requests are retried automatically with backoff. Pass your own
 
 - [SMS API](https://texto.com.au/api) Docs: https://texto.com.au/api
 - Email: support@texto.com.au
+- Website: https://texto.com.au
 
 MIT licensed. Copyright (c) 2026 Floop Pty Ltd trading as Texto.
