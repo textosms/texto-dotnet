@@ -1,6 +1,6 @@
 # Texto .NET SDK
 
-Official .NET SDK for the [Texto](https://texto.com.au) SMS API.
+Official .NET SDK for the Texto [SMS API](https://texto.com.au).
 Targets .NET 6+ and .NET Standard 2.0.
 
 ## Install
@@ -97,7 +97,7 @@ Idempotent requests are retried automatically with backoff. Pass your own
 
 ## Support
 
-- Docs: https://texto.com.au/developers
+- [SMS API](https://texto.com.au/api) Docs: https://texto.com.au/api
 - Email: support@texto.com.au
 
 MIT licensed. Copyright (c) 2026 Floop Pty Ltd trading as Texto.
